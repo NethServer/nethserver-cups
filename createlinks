@@ -85,4 +85,6 @@ templates2events("/etc/logrotate.d/cups", $event);
 templates2events("/etc/cups/mime.convs", $event);
 templates2events("/etc/cups/mime.types", $event);
 templates2events("/etc/cups/cupsd.conf", $event);
+templates2events("/etc/samba/smb.conf", $event);
 safe_symlink("sigterm", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+safe_symlink("reload", "root/etc/e-smith/events/$event/services2adjust/smbd");
