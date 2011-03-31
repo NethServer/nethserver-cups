@@ -1,0 +1,5 @@
+#!/bin/sh
+exec			\
+    chpst -u smelog	\
+    svlogd -t		\
+    /var/log/cups/cups-lpd

@@ -1,0 +1,7 @@
+#
+# ServerKey: the file to read containing the server's key.
+# Defaults to "/etc/cups/ssl/server.key".
+#
+
+#ServerKey /etc/cups/ssl/server.key
+

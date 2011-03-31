@@ -1,0 +1,7 @@
+#
+# KeepAliveTimeout: the timeout before Keep-Alive connections are
+# automatically closed.  Default is 60 seconds.
+#
+
+#KeepAliveTimeout 60
+

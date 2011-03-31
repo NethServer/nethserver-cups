@@ -1,0 +1,7 @@
+#
+# MaxJobsPerPrinter: maximum number of active jobs per printer. The default
+# is 0 for no limit.
+#
+
+#MaxJobsPerPrinter 0
+

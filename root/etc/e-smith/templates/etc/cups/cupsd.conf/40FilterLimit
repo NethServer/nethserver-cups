@@ -1,0 +1,11 @@
+#
+# FilterLimit: sets the maximum cost of all job filters that can be run
+# at the same time.  A limit of 0 means no limit.  A typical job may need
+# a filter limit of at least 200; limits less than the minimum required
+# by a job force a single job to be printed at any time.
+#
+# The default limit is 0 (unlimited).
+#
+
+#FilterLimit 0
+

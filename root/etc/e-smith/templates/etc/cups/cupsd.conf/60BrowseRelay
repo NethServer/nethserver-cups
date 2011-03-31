@@ -1,0 +1,7 @@
+#
+# BrowseRelay: relay browser packets from one address/network to another.
+#
+
+#BrowseRelay source-address destination-address
+#BrowseRelay @IF(src) @IF(dst)
+

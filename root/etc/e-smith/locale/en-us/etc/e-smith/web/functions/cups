@@ -1,0 +1,93 @@
+<lexicon lang="en-us">
+  <entry>
+    <base>FORM_TITLE</base>
+    <trans>Manage printers</trans>
+  </entry>
+  <entry>
+    <base>CLICK_HERE</base>
+    <trans>Click here</trans>
+  </entry>
+  <entry>
+    <base>CUPS_DESCRIPTION_BEGIN</base>
+    <trans>to access the web interface to CUPS, the Common UNIX Printing
+	System. All users on your network can access this web interface
+	through the URL</trans>
+  </entry>
+  <entry>
+    <base>CUPS_DESCRIPTION_END</base>
+    <trans>
+	<![CDATA[
+	to control print jobs, see what printers are available, or to read the
+	CUPS user documentation.<BR>
+	Administration tasks such as adding, deleting or configuring printers
+	require the admin login and password.
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>SYNC_DESC_HEADER</base>
+    <trans>Synchronize printer lists</trans>
+  </entry>
+  <entry>
+    <base>SYNC_DESCRIPTION</base>
+    <trans>
+	<![CDATA[
+	CUPS maintains its own list of printers outside the control of the SME
+	server management software. Consequently, this list may be out of sync
+	with the list of printers that's exported to Windows and Mac&nbsp;OS
+	clients by samba and netatalk.<BR>
+	If the printer lists are out of sync, push the button to synchronize
+	them.
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>PRINTERS_IN_SYNC</base>
+    <trans>
+	<![CDATA[
+	<FONT COLOR="Green">Printer lists are in sync.</FONT>
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>PRINTERS_OUT_OF_SYNC</base>
+    <trans>
+	<![CDATA[
+	<FONT COLOR="Red">Printer lists are out of sync!</FONT>
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>NO_PRINTERS_TO_SYNC</base>
+    <trans>
+	<![CDATA[
+	<FONT COLOR="Green">There are no configured printers and thus no
+	printer lists to synchronize.</FONT>
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>SYNCHRONIZE</base>
+    <trans>Synchronize</trans>
+  </entry>
+  <entry>
+    <base>PRINTER_SYNC_ERROR</base>
+    <trans>
+	An error occurred while synchronizing the printer lists.
+    </trans>
+  </entry>
+  <entry>
+    <base>PRINTER_SYNC_SUCCESS</base>
+    <trans>
+	The printer lists were successfully synchronized.
+    </trans>
+  </entry>
+  <entry>
+    <base>Configuration</base>
+    <trans>Configuration</trans>
+  </entry>
+  <entry>
+    <base>Printers</base>
+    <trans>Printers</trans>
+  </entry>
+</lexicon>

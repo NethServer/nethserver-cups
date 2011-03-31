@@ -1,0 +1,11 @@
+########
+######## Encryption Support
+########
+
+#
+# ServerCertificate: the file to read containing the server's certificate.
+# Defaults to "/etc/cups/ssl/server.crt".
+#
+
+#ServerCertificate /etc/cups/ssl/server.crt
+

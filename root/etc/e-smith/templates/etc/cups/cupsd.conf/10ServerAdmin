@@ -1,0 +1,11 @@
+########
+######## Server Identity
+########
+
+#
+# ServerAdmin: the email address to send all complaints/problems to.
+# By default CUPS will use "root@hostname".
+#
+
+ServerAdmin admin@{ $DomainName }
+

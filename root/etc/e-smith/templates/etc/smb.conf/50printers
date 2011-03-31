@@ -1,0 +1,16 @@
+{
+# NOTE: If you have a BSD-style print system there is no need to 
+# specifically define each individual printer
+# Set public = yes to allow user 'guest account' to print
+    $OUT = <<HERE;
+[printers]
+comment = All Printers
+path = /var/spool/samba
+browseable = no
+guest ok = no
+writable = no
+printable = yes
+HERE
+    $OUT .= "use client driver = ";
+    $OUT .= $smb{UseClientDriver} || "yes";
+}

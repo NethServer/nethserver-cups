@@ -1,0 +1,6 @@
+{
+    $OUT = '';
+
+    my $trustedHosts = $cupsd{TrustedHosts} or return;
+    @trustedHosts = split(",", $trustedHosts);
+}

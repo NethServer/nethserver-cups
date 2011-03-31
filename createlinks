@@ -1,0 +1,108 @@
+#!/usr/bin/perl -w
+
+use esmith::Build::CreateLinks  qw(:all);
+use File::Path;
+
+#--------------------------------------------------
+# service links for cupsd
+#--------------------------------------------------
+$service = "cupsd";
+
+mkpath("root/var/service/$service/supervise");
+mkpath("root/var/service/$service/log/supervise");
+safe_symlink("/var/service/$service", "root/service/$service");
+safe_symlink("../daemontools", "root/etc/rc.d/init.d/supervise/$service");
+service_link_enhanced($service, "S90", "7");
+safe_touch("root/var/service/$service/down");
+
+#--------------------------------------------------
+# service links for cups-lpd
+#--------------------------------------------------
+$service = "cups-lpd";
+
+mkpath("root/var/service/$service/supervise");
+mkpath("root/var/service/$service/log/supervise");
+safe_symlink("/var/service/$service", "root/service/$service");
+safe_symlink("../daemontools", "root/etc/rc.d/init.d/supervise/$service");
+service_link_enhanced($service, "S95", "7");
+safe_touch("root/var/service/$service/down");
+
+#--------------------------------------------------
+# functions for manager panel
+#--------------------------------------------------
+my $panel = "manager";
+
+panel_link("cups", $panel);
+
+#--------------------------------------------------
+# actions for printer-sync event
+#--------------------------------------------------
+
+$event = "printer-sync";
+
+event_link("cups-create-db", $event, "00");
+event_link("atalk-restart", $event, "90");
+event_link("cups-symlink-ppds", $event, "95");
+event_link("cups-update-timestamp", $event, "95");
+templates2events("/etc/atalk/papd.conf", $event);
+safe_symlink("sigterm", "root/etc/e-smith/events/$event/services2adjust/smbd");
+
+#--------------------------------------------------
+# actions for network-create event
+#--------------------------------------------------
+
+$event = "network-create";
+
+templates2events("/etc/cups/cupsd.conf", $event);
+safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+
+#--------------------------------------------------
+# actions for network-delete event
+#--------------------------------------------------
+
+$event = "network-delete";
+
+templates2events("/etc/cups/cupsd.conf", $event);
+safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+
+#--------------------------------------------------
+# actions for bootstrap-console-save event
+#--------------------------------------------------
+
+$event = "bootstrap-console-save";
+
+templates2events("/etc/logrotate.d/cups", $event);
+templates2events("/etc/cups/mime.convs", $event);
+templates2events("/etc/cups/mime.types", $event);
+templates2events("/etc/cups/cupsd.conf", $event);
+
+#--------------------------------------------------
+# actions for console-save event
+#--------------------------------------------------
+
+$event = "console-save";
+
+templates2events("/etc/cups/cupsd.conf", $event);
+safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+
+#--------------------------------------------------
+# actions for cups-reconfigure event
+#--------------------------------------------------
+
+$event = "cups-reconfigure";
+
+templates2events("/etc/cups/cupsd.conf", $event);
+safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+
+#--------------------------------------------------
+# actions for cups-upgrade event
+#--------------------------------------------------
+
+$event = "cups-upgrade";
+
+event_link("navigation-conf", $event, "50");
+templates2events("/etc/logrotate.d/cups", $event);
+templates2events("/etc/cups/mime.convs", $event);
+templates2events("/etc/cups/mime.types", $event);
+templates2events("/etc/cups/cupsd.conf", $event);
+safe_symlink("sigterm", "root/etc/e-smith/events/$event/services2adjust/cupsd");

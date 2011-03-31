@@ -1,0 +1,6 @@
+#
+# BrowsePoll: poll the named server(s) for printers
+#
+
+#BrowsePoll address:port
+

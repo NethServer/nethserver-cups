@@ -1,0 +1,8 @@
+#
+# BrowseShortNames: whether or not to use "short" names for remote printers
+# when possible (e.g. "printer" instead of "printer@host".)  Enabled by
+# default.
+#
+
+#BrowseShortNames Yes
+

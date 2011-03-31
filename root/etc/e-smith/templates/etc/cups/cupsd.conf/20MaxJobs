@@ -1,0 +1,7 @@
+#
+# MaxJobs: maximum number of jobs to keep in memory (active and completed.)
+# Default is 500; the value 0 is used for no limit.
+#
+
+#MaxJobs 500
+

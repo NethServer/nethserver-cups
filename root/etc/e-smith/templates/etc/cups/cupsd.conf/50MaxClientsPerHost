@@ -1,0 +1,9 @@
+#
+# MaxClientsPerHost: controls the maximum number of simultaneous clients that
+# will be handled from a specific host.  Defaults to 10 or 1/10th of the
+# MaxClients setting, whichever is larger.  A value of 0 specifies the
+# automatic (10 or 1/10th) setting.
+#
+
+#MaxClientsPerHost 0
+

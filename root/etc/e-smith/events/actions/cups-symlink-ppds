@@ -1,0 +1,7 @@
+#!/usr/bin/perl -w
+
+unless (-e "/home/e-smith/files/primary/files/cups-ppds") {
+    symlink ("/etc/cups/ppd", "/home/e-smith/files/primary/files/cups-ppds");
+}
+
+exit (0);

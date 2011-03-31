@@ -1,0 +1,33 @@
+#
+# BrowseAddress: specifies a broadcast address to be used.  By
+# default browsing information is not sent!
+#
+# Note: HP-UX does not properly handle broadcast unless you have a
+# Class A, B, C, or D netmask (i.e. no CIDR support).
+#
+# Note: Using the "global" broadcast address (255.255.255.255) will
+# activate a Linux demand-dial link with the default configuration.
+# If you have a LAN as well as the dial-up link, use the LAN's
+# broadcast address.
+#
+# The @LOCAL address broadcasts to all non point-to-point interfaces.
+# For example, if you have a LAN and a dial-up link, @LOCAL would
+# send printer updates to the LAN but not to the dial-up link.
+# Similarly, the @IF(name) address sends to the named network
+# interface, e.g. @IF(eth0) under Linux.  Interfaces are refreshed
+# automatically (no more than once every 60 seconds), so they can
+# be used on dynamically-configured interfaces, e.g. PPP, 802.11, etc.
+#
+
+#BrowseAddress x.y.z.255
+#BrowseAddress x.y.255.255
+#BrowseAddress x.255.255.255
+#BrowseAddress 255.255.255.255
+#BrowseAddress @LOCAL
+#BrowseAddress @IF(name)
+
+{
+    foreach (@trustedHosts){
+        $OUT .= "BrowseAddress $_\n";
+    }
+}

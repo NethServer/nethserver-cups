@@ -1,0 +1,9 @@
+#
+# ServerName: the hostname of your server, as advertised to the world.
+# By default CUPS will use the hostname of the system.
+#
+# To set the default server used by clients, see the client.conf file.
+#
+
+#ServerName myhost.domain.com
+

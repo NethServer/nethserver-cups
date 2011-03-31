@@ -1,0 +1,31 @@
+#
+# BrowseAllow: specifies an address mask to allow for incoming browser
+# packets. The default is to allow packets from all addresses.
+#
+# BrowseDeny: specifies an address mask to deny for incoming browser
+# packets. The default is to deny packets from no addresses.
+#
+# Both "BrowseAllow" and "BrowseDeny" accept the following notations for
+# addresses:
+#
+#     All
+#     None
+#     *.domain.com
+#     .domain.com
+#     host.domain.com
+#     nnn.*
+#     nnn.nnn.*
+#     nnn.nnn.nnn.*
+#     nnn.nnn.nnn.nnn
+#     nnn.nnn.nnn.nnn/mm
+#     nnn.nnn.nnn.nnn/mmm.mmm.mmm.mmm
+#     @LOCAL
+#     @IF(name)
+#
+# The hostname/domainname restrictions only work if you have turned hostname
+# lookups on!
+#
+
+#BrowseAllow address
+#BrowseDeny address
+

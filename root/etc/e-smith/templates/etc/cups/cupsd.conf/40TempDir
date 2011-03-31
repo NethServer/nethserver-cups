@@ -1,0 +1,8 @@
+#
+# TempDir: the directory to put temporary files in.  This directory must be
+# writable by the user defined above!  Defaults to "/var/spool/cups/tmp" or
+# the value of the TMPDIR environment variable.
+#
+
+#TempDir /var/spool/cups/tmp
+

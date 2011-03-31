@@ -1,0 +1,7 @@
+#
+# DefaultLanguage: the default language if not specified by the browser.
+# If not specified, the current locale is used.
+#
+
+#DefaultLanguage en
+

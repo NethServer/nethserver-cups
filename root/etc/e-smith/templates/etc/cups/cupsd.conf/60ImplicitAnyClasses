@@ -1,0 +1,16 @@
+#
+# ImplicitAnyClasses: whether or not to create "AnyPrinter" implicit
+# classes.
+#
+# When ImplicitAnyClasses is On and a local queue of the same name
+# exists, e.g. "printer", "printer@server1", "printer@server1", then
+# an implicit class called "Anyprinter" is created instead.
+#
+# When ImplicitAnyClasses is Off, implicit classes are not created
+# when there is a local queue of the same name.
+#
+# Disabled by default.
+#
+
+#ImplicitAnyCLasses Off
+

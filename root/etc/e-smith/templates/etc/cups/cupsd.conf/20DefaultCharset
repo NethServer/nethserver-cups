@@ -1,0 +1,8 @@
+#
+# DefaultCharset: the default character set to use. If not specified,
+# defaults to "utf-8".  Note that this can also be overridden in
+# HTML documents...
+#
+
+#DefaultCharset utf-8
+

@@ -1,0 +1,8 @@
+#
+# PrintcapFormat: the format of the printcap file, currently either
+# BSD or Solaris.  The default is "BSD".
+#
+
+#PrintcapFormat BSD
+#PrintcapFormat Solaris
+

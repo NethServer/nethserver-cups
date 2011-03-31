@@ -1,0 +1,10 @@
+########################################################################
+#
+# Form filter...
+#
+# This filter does not currently exist, but the file format is defined
+# in the IDD and registered with the IANA for future use...
+#
+
+#application/vnd.cups-form application/vnd.cups-postscript 33 formtops
+

@@ -1,0 +1,7 @@
+#
+# MaxJobsPerUser: maximum number of active jobs per user. The default
+# is 0 for no limit.
+#
+
+#MaxJobsPerUser 0
+

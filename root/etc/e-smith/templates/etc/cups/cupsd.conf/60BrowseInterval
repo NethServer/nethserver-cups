@@ -1,0 +1,13 @@
+#
+# BrowseInterval: the time between browsing updates in seconds.  Default
+# is 30 seconds.
+#
+# Note that browsing information is sent whenever a printer's state changes
+# as well, so this represents the maximum time between updates.
+#
+# Set this to 0 to disable outgoing broadcasts so your local printers are
+# not advertised but you can still see printers on other hosts.
+#
+
+#BrowseInterval 30
+

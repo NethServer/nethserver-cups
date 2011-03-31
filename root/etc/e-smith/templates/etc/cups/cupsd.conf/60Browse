@@ -1,0 +1,11 @@
+########
+######## Browsing Options
+########
+
+#
+# Browsing: whether or not to broadcast and/or listen for CUPS printer
+# information on the network.  Enabled by default.
+#
+
+#Browsing On
+

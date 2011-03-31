@@ -1,0 +1,19 @@
+<Location /admin>
+#
+# You definitely will want to limit access to the administration functions.
+# The default configuration requires a local connection from a user who
+# is a member of the system group to do any admin tasks.  You can change
+# the group name using the SystemGroup directive.
+#
+
+AuthType Basic
+Require user admin
+
+## Restrict access to local domain
+#Order Deny,Allow
+#Deny From All
+#Allow From 127.0.0.1
+
+#Encryption Required
+</Location>
+

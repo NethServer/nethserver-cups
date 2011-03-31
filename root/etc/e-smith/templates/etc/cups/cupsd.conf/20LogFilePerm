@@ -1,0 +1,7 @@
+#
+# LogFilePerm: specifies the permissions to use when writing log files. Default
+# is 0644.
+#
+
+LogFilePerm 0600
+

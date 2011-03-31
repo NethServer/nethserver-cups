@@ -1,0 +1,43 @@
+########
+######## Network Options
+########
+
+#
+# Ports/addresses that we listen to.  The default port 631 is reserved
+# for the Internet Printing Protocol (IPP) and is what we use here.
+#
+# You can have multiple Port/Listen lines to listen to more than one
+# port or address, or to restrict access:
+#
+#    Port 80
+#    Port 631
+#    Listen hostname
+#    Listen hostname:80
+#    Listen hostname:631
+#    Listen 1.2.3.4
+#    Listen 1.2.3.4:631
+#
+# NOTE: Unfortunately, most web browsers don't support TLS or HTTP Upgrades
+# for encryption.  If you want to support web-based encryption you'll
+# probably need to listen on port 443 (the "https" port...)
+#
+# NOTE 2: In order for the command-line and web interfaces to work, you
+# must have at least one Port or Listen line that allows access from the
+# local loopback address (localhost).
+#
+
+#Port 80
+#Port 443
+#Port 631
+
+{
+    my @ipAddresses = ("127.0.0.1", $LocalIP);
+
+    # Remove any duplicate IP addresses
+    my %ipAddresses = map { $_ => 1 } @ipAddresses;
+    foreach my $ip (sort keys %ipAddresses)
+    {
+        $OUT .= "Listen $ip:631\n";
+    }
+}
+

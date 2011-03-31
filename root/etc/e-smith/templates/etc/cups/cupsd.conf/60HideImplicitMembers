@@ -1,0 +1,14 @@
+#
+# HideImplicitMembers: whether or not to show the members of an
+# implicit class.
+#
+# When HideImplicitMembers is On, any remote printers that are
+# part of an implicit class are hidden from the user, who will
+# then only see a single queue even though many queues will be
+# supporting the implicit class.
+#
+# Enabled by default.
+#
+
+#HideImplicitMembers On
+

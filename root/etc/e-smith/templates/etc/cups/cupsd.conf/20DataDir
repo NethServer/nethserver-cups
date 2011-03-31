@@ -1,0 +1,7 @@
+#
+# DataDir: the root directory for the CUPS data files.
+# By default "/usr/share/cups".
+#
+
+#DataDir /usr/share/cups
+

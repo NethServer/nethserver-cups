@@ -1,0 +1,58 @@
+#!/usr/bin/perl -w
+
+#----------------------------------------------------------------------
+# Copyright (C) 2003,2005 Robert van den Aker <robert2@dds.nl>
+# This script uses functions that are copyright (C) 2000,2001 e-smith,
+# inc.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307,
+# USA.
+#----------------------------------------------------------------------
+
+use strict;
+use Errno;
+use esmith::ConfigDB;
+
+### Open db for writing ###
+my $file = "cups";
+my $db = esmith::ConfigDB->open($file) or
+    die "Could not open database $file";
+
+### Delete all existing printer records from db ###
+foreach ($db->get_all_by_prop(type => 'printer')) {
+    $_->delete if defined $_;
+}
+
+### Create db records from $printersconf contents ###
+my $printersconf = "/etc/cups/printers.conf";
+open (PRINTERSCONF, "<$printersconf") or
+    die "Could not open input file $printersconf";
+my $printer;
+my $description;
+while (<PRINTERSCONF>) {
+    chomp;
+    /^<(Default)?Printer ([a-z][a-z0-9]*)>$/ && ($printer = "$2");
+    /^Info ([^\W\_][\w\- ]*)$/ && ($description = "$1");
+    next unless (/^<\/Printer>$/);
+    if ($printer && ($description ||= $printer)) {
+        $db->new_record($printer, { type => 'printer',
+                                    Description => $description });
+    }
+    $printer = "";
+    $description = "";
+}
+close (PRINTERSCONF);
+
+exit (0);

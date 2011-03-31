@@ -1,0 +1,7 @@
+#
+# FontPath: the path to locate all font files (currently only for pstoraster)
+# By default "/usr/share/cups/fonts".
+#
+
+#FontPath /usr/share/cups/fonts
+

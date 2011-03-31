@@ -1,0 +1,12 @@
+########
+######## Security Options
+########
+
+#
+# SystemGroup: the group name for "System" (printer administration)
+# access.  The default varies depending on the operating system, but
+# will be "sys", "system", or "root" (checked for in that order.)
+#
+
+SystemGroup { $cupsd{SystemGroup} || "root" }
+

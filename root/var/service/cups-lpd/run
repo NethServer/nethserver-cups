@@ -1,0 +1,4 @@
+#!/bin/sh
+svwaitup -s 5 /service/cupsd || exit 1
+exec 2>&1
+exec tcpsvd -u lp 0 printer /usr/lib/cups/daemon/cups-lpd

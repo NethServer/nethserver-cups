@@ -1,0 +1,82 @@
+#
+# Access permissions for each directory served by the scheduler.
+# Locations are relative to DocumentRoot...
+#
+# AuthType: the authorization to use:
+#
+#    None   - Perform no authentication
+#    Basic  - Perform authentication using the HTTP Basic method.
+#    Digest - Perform authentication using the HTTP Digest method.
+#
+#    (Note: local certificate authentication can be substituted by
+#           the client for Basic or Digest when connecting to the
+#           localhost interface)
+#
+# AuthClass: the authorization class; currently only "Anonymous", "User",
+# "System" (valid user belonging to group SystemGroup), and "Group"
+# (valid user belonging to the specified group) are supported.
+#
+# AuthGroupName: the group name for "Group" authorization.
+#
+# Order: the order of Allow/Deny processing.
+#
+# Allow: allows access from the specified hostname, domain, IP address,
+# network, or interface.
+#
+# Deny: denies access from the specified hostname, domain, IP address,
+# network, or interface.
+#
+# Both "Allow" and "Deny" accept the following notations for addresses:
+#
+#     All
+#     None
+#     *.domain.com
+#     .domain.com
+#     host.domain.com
+#     nnn.*
+#     nnn.nnn.*
+#     nnn.nnn.nnn.*
+#     nnn.nnn.nnn.nnn
+#     nnn.nnn.nnn.nnn/mm
+#     nnn.nnn.nnn.nnn/mmm.mmm.mmm.mmm
+#     @LOCAL
+#     @IF(name)
+#
+# The host and domain address require that you enable hostname lookups
+# with "HostNameLookups On" above.
+#
+# The @LOCAL address allows or denies from all non point-to-point
+# interfaces.  For example, if you have a LAN and a dial-up link,
+# @LOCAL could allow connections from the LAN but not from the dial-up
+# link.  Similarly, the @IF(name) address allows or denies from the
+# named network interface, e.g. @IF(eth0) under Linux.  Interfaces are
+# refreshed automatically (no more than once every 60 seconds), so
+# they can be used on dynamically-configured interfaces, e.g. PPP,
+# 802.11, etc.
+#
+# Encryption: whether or not to use encryption; this depends on having
+# the OpenSSL library linked into the CUPS library and scheduler.
+#
+# Possible values:
+#
+#     Always       - Always use encryption (SSL)
+#     Never        - Never use encryption
+#     Required     - Use TLS encryption upgrade
+#     IfRequested  - Use encryption if the server requests it
+#
+# The default value is "IfRequested".
+#
+
+<Location />
+Order Deny,Allow
+Deny From All
+{
+    use esmith::NetworksDB;
+    my $ndb = esmith::NetworksDB->open_ro();
+    my @access = $ndb->local_access_spec();
+    foreach (@access){
+        $OUT .= "Allow From $_\n";
+    }
+}
+</Location>
+

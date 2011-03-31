@@ -1,0 +1,12 @@
+#
+# MaxLogSize: controls the maximum size of each log file before they are
+# rotated.  Defaults to 1048576 (1MB).  Set to 0 to disable log rotating.
+#
+# Note from the packager: this very high value is correct. Under normal
+# circumstances the logs are rotated by logrotate, not cupsd. As a failsafe
+# measure we have cupsd rotate a log if for some odd reason it approaches a
+# common filesystem limit of 2GB before logrotate gets around to rotating it.
+#
+
+MaxLogSize 2000000000
+

@@ -1,0 +1,17 @@
+########
+######## Filter Options
+########
+
+#
+# User/Group: the user and group the server runs under.  Normally this
+# must be lp and sys, however you can configure things for another
+# user or group as needed.
+#
+# Note: the server must be run initially as root to support the
+# default IPP port of 631.  It changes users whenever an external
+# program is run, or if the RunAsUser directive is specified...
+#
+
+#User lp
+#Group sys
+

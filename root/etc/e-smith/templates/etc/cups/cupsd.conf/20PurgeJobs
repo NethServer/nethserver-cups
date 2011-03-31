@@ -1,0 +1,7 @@
+#
+# AutoPurgeJobs: automatically purge jobs when not needed for quotas.
+# Default is No.
+#
+
+#AutoPurgeJobs No
+

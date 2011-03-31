@@ -1,0 +1,12 @@
+########################################################################
+#
+# Raw print file support...
+#
+
+application/vnd.hp-HPRAW	(string(0,<1B>E) + !string(2,<1B>%0B)) \
+				string(0,<1B>@) \
+				(contains(0,128,<1B>%-12345X) + \
+				 (contains(0,1024,"LANGUAGE=PCL") \
+				  contains(0,1024,"LANGUAGE = PCL")))
+application/octet-stream
+

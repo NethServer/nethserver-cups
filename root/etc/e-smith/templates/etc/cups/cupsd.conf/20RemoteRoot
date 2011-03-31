@@ -1,0 +1,7 @@
+#
+# RemoteRoot: the name of the user assigned to unauthenticated accesses
+# from remote systems.  By default "remroot".
+#
+
+#RemoteRoot remroot
+

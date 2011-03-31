@@ -1,0 +1,93 @@
+<lexicon lang="de">
+  <entry>
+    <base>FORM_TITLE</base>
+    <trans>Drucker verwalten</trans>
+  </entry>
+  <entry>
+    <base>CLICK_HERE</base>
+    <trans>Hier klicken</trans>
+  </entry>
+  <entry>
+    <base>CUPS_DESCRIPTION_BEGIN</base>
+    <trans>um auf das Web Interface von CUPS, dem Common UNIX
+	Printing System zuzugreifen. Alle Benutzer in Ihrem Neztwerk können auf
+	diese Oberfläche über folgende URL zugreifen</trans>
+  </entry>
+  <entry>
+    <base>CUPS_DESCRIPTION_END</base>
+    <trans>
+	<![CDATA[
+	um nach Druckaufträgen zu sehen, zu prüfen welche Drucker verfügbar
+	sind oder die CUPS Dokumentation zu lesen.<BR>
+	Für administrative Aufgaben, wie das hinzufügen oder löschen von
+	Druckern benötigen Sie das Admin Login und Passwort.
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>SYNC_DESC_HEADER</base>
+    <trans>Synchronisieren der Druckerliste</trans>
+  </entry>
+  <entry>
+    <base>SYNC_DESCRIPTION</base>
+    <trans>
+	<![CDATA[
+	CUPS verwaltet seine eigene Liste der Drucker ausserhalb der Kontrolle
+	der Server Management Software. Daher kann es sein, das die
+	Druckerliste nicht mit der Liste der Drucker für Windows und MacOS
+	Clients synchronisiert ist.<BR>
+	Wenn die Druckerliste nicht synchronisiert ist, klicken Sie den Button
+	um die Druckerliste zu synchronisieren.
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>PRINTERS_IN_SYNC</base>
+    <trans>
+	<![CDATA[
+	<FONT COLOR="Green">Druckerlisten sind synchronisiert.</FONT>
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>PRINTERS_OUT_OF_SYNC</base>
+    <trans>
+	<![CDATA[
+	<FONT COLOR="Red">Druckerlisten sind nicht synchronisiert!</FONT>
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>NO_PRINTERS_TO_SYNC</base>
+    <trans>
+	<![CDATA[
+	<FONT COLOR="Green">Es gibt keine Konfigurierten Drucker, und 
+	daher auch keine Druckerliste zum synchronisieren.</FONT>
+	]]>
+    </trans>
+  </entry>
+  <entry>
+    <base>SYNCHRONIZE</base>
+    <trans>Synchronisieren</trans>
+  </entry>
+  <entry>
+    <base>PRINTER_SYNC_ERROR</base>
+    <trans>
+	Beim synchronisieren der Druckerliste ist ein Fehler aufgetreten.
+    </trans>
+  </entry>
+  <entry>
+    <base>PRINTER_SYNC_SUCCESS</base>
+    <trans>
+	Die Druckerliste wurde erfolgreich synchronisiert.
+    </trans>
+  </entry>
+  <entry>
+    <base>Configuration</base>
+    <trans>Konfiguration</trans>
+  </entry>
+  <entry>
+    <base>Printers</base>
+    <trans>Drucker</trans>
+  </entry>
+</lexicon>

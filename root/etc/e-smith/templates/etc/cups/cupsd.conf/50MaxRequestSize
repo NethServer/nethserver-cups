@@ -1,0 +1,7 @@
+#
+# MaxRequestSize: controls the maximum size of HTTP requests and print files.
+# Set to 0 to disable this feature (defaults to 0.)
+#
+
+#MaxRequestSize 0
+
