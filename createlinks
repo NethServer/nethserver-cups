@@ -18,24 +18,13 @@ $service = "cups-lpd";
 service_link_enhanced($service, "S95", "7");
 
 #--------------------------------------------------
-# actions for printer-sync event
-#--------------------------------------------------
-
-$event = "printer-sync";
-
-event_link("cups-create-db", $event, "00");
-event_link("cups-symlink-ppds", $event, "95");
-event_link("cups-update-timestamp", $event, "95");
-safe_symlink("sigterm", "root/etc/e-smith/events/$event/services2adjust/smbd");
-
-#--------------------------------------------------
 # actions for network-create event
 #--------------------------------------------------
 
 $event = "network-create";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cups");
 
 #--------------------------------------------------
 # actions for network-delete event
@@ -44,7 +33,7 @@ safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
 $event = "network-delete";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cups");
 
 #--------------------------------------------------
 # actions for bootstrap-console-save event
@@ -64,7 +53,7 @@ templates2events("/etc/cups/cupsd.conf", $event);
 $event = "console-save";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cups");
 
 #--------------------------------------------------
 # actions for cups-reconfigure event
@@ -73,18 +62,17 @@ safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
 $event = "cups-reconfigure";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cups");
 
 #--------------------------------------------------
 # actions for cups-update event
 #--------------------------------------------------
 
-$event = "cups-update";
+$event = "nethserver-cups-update";
 
-templates2events("/etc/logrotate.d/cups", $event);
 templates2events("/etc/cups/mime.convs", $event);
 templates2events("/etc/cups/mime.types", $event);
 templates2events("/etc/cups/cupsd.conf", $event);
 templates2events("/etc/samba/smb.conf", $event);
-safe_symlink("sigterm", "root/etc/e-smith/events/$event/services2adjust/cupsd");
+safe_symlink("sigterm", "root/etc/e-smith/events/$event/services2adjust/cups");
 safe_symlink("reload", "root/etc/e-smith/events/$event/services2adjust/smbd");
