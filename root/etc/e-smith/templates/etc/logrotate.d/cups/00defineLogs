@@ -1,8 +1,0 @@
-{
-    $OUT = '';
-    @logs = qw(
-	/var/log/cups/access_log
-	/var/log/cups/error_log
-	/var/log/cups/page_log
-    );
-}
