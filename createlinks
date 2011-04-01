@@ -24,7 +24,7 @@ service_link_enhanced($service, "S95", "7");
 $event = "network-create";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cups");
+safe_symlink("condrestart", "root/etc/e-smith/events/$event/services2adjust/cups");
 
 #--------------------------------------------------
 # actions for network-delete event
@@ -33,7 +33,7 @@ safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cups");
 $event = "network-delete";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cups");
+safe_symlink("condrestart", "root/etc/e-smith/events/$event/services2adjust/cups");
 
 #--------------------------------------------------
 # actions for bootstrap-console-save event
@@ -53,16 +53,7 @@ templates2events("/etc/cups/cupsd.conf", $event);
 $event = "console-save";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cups");
-
-#--------------------------------------------------
-# actions for cups-reconfigure event
-#--------------------------------------------------
-
-$event = "cups-reconfigure";
-
-templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("sighup", "root/etc/e-smith/events/$event/services2adjust/cups");
+safe_symlink("condrestart", "root/etc/e-smith/events/$event/services2adjust/cups");
 
 #--------------------------------------------------
 # actions for cups-update event
@@ -74,5 +65,5 @@ templates2events("/etc/cups/mime.convs", $event);
 templates2events("/etc/cups/mime.types", $event);
 templates2events("/etc/cups/cupsd.conf", $event);
 templates2events("/etc/samba/smb.conf", $event);
-safe_symlink("sigterm", "root/etc/e-smith/events/$event/services2adjust/cups");
+safe_symlink("condrestart", "root/etc/e-smith/events/$event/services2adjust/cups");
 safe_symlink("reload", "root/etc/e-smith/events/$event/services2adjust/smbd");
