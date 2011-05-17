@@ -11,20 +11,13 @@ $service = "cupsd";
 service_link_enhanced($service, "S90", "7");
 
 #--------------------------------------------------
-# service links for cups-lpd
-#--------------------------------------------------
-$service = "cups-lpd";
-
-service_link_enhanced($service, "S95", "7");
-
-#--------------------------------------------------
 # actions for network-create event
 #--------------------------------------------------
 
 $event = "network-create";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
+safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cupsd");
 
 #--------------------------------------------------
 # actions for network-delete event
@@ -33,7 +26,7 @@ safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
 $event = "network-delete";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
+safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cupsd");
 
 #--------------------------------------------------
 # actions for bootstrap-console-save event
@@ -53,7 +46,7 @@ templates2events("/etc/cups/cupsd.conf", $event);
 $event = "console-save";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
+safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cupsd");
 
 #--------------------------------------------------
 # actions for cups-update event
@@ -65,7 +58,7 @@ templates2events("/etc/cups/mime.convs", $event);
 templates2events("/etc/cups/mime.types", $event);
 templates2events("/etc/cups/cupsd.conf", $event);
 templates2events("/etc/samba/smb.conf", $event);
-safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
+safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cupsd");
 safe_symlink("reload", "root/etc/e-smith/events/$event/services2adjust/smbd");
 
 # Make ppds accessible via samba
