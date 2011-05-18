@@ -8,5 +8,6 @@
     $OUT .= <<HERE;
 load printers = yes
 printing = cups
+printcap name = cups
 HERE
 }
