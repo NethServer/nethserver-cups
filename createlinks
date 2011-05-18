@@ -65,6 +65,3 @@ safe_symlink("reload", "root/etc/e-smith/events/$event/services2adjust/smbd");
 
 safe_symlink("/etc/cups/ppd", "root/home/e-smith/files/primary/files/cups-ppds");
 
-# Link for web interface
-
-safe_symlink("/etc/e-smith/web/panels/manager/cgi-bin/printers", "../../../functions/printers");
