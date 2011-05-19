@@ -61,7 +61,3 @@ templates2events("/etc/samba/smb.conf", $event);
 safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
 safe_symlink("reload", "root/etc/e-smith/events/$event/services2adjust/smbd");
 
-# Make ppds accessible via samba
-
-safe_symlink("/etc/cups/ppd", "root/home/e-smith/files/primary/files/cups-ppds");
-
