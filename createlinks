@@ -34,7 +34,6 @@ safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
 
 $event = "bootstrap-console-save";
 
-templates2events("/etc/logrotate.d/cups", $event);
 templates2events("/etc/cups/mime.convs", $event);
 templates2events("/etc/cups/mime.types", $event);
 templates2events("/etc/cups/cupsd.conf", $event);
