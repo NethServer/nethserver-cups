@@ -1,0 +1,50 @@
+Summary: NethServer CUPS module
+Name: nethserver-cups
+Version:        @@VERSION@@
+Release:        @@RELEASE@@%{?dist}
+License: GPL
+Group: Networking/Daemons
+Source0: %{name}-%{version}.tar.gz
+Packager: Giacomo Sanchietti <giacomo@nethesis.it>
+
+#Requires: cups-pdf
+BuildArch: noarch
+
+Requires: foomatic, ghostscript, hpijs
+Requires: nethserver-base
+
+BuildRequires: nethserver-devtools
+AutoReq: no
+
+%description
+CUPS module for NethServer.
+
+Based on a work of Robert van den Aker <robert2@dds.nl>
+
+%prep
+%setup -q
+
+%build
+perl createlinks
+mkdir -p root/usr/lib/cups/backend && ln -s /usr/bin/smbspool root/usr/lib/cups/backend/smb
+
+%install
+rm -rf $RPM_BUILD_ROOT
+(cd root ; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
+rm -f %{name}-%{version}-%{release}-filelist
+/sbin/e-smith/genfilelist $RPM_BUILD_ROOT \
+    --file /home/e-smith/db/cups "config(noreplace) %attr(0640,root,admin)" \
+    > %{name}-%{version}-%{release}-filelist
+echo "%doc COPYING" >> %{name}-%{version}-%{release}-filelist
+
+
+%post
+/sbin/e-smith/signal-event %{name}-update
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files -f %{name}-%{version}-%{release}-filelist
+%defattr(-,root,root)
+
+%changelog
