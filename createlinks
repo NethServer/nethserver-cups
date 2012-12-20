@@ -65,8 +65,6 @@ event_services($event, 'cups' => 'restart');
 
 $event = "nethserver-cups-update";
 
-templates2events("/etc/cups/mime.convs", $event);
-templates2events("/etc/cups/mime.types", $event);
 templates2events("/etc/cups/cupsd.conf", $event);
 templates2events("/etc/samba/smb.conf", $event);
 event_services($event, 'cups' => 'restart');
