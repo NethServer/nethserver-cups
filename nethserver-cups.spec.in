@@ -39,7 +39,8 @@ echo "%doc COPYING" >> %{name}-%{version}-%{release}-filelist
 
 
 %post
-/sbin/e-smith/signal-event %{name}-update
+source /etc/nethserver/rpm_hook_functions
+event_queue add %{name}-update
 
 %clean
 rm -rf $RPM_BUILD_ROOT
