@@ -29,15 +29,8 @@
 #Port 80
 #Port 443
 #Port 631
-
+    
 {
-    my @ipAddresses = ("127.0.0.1", $LocalIP);
-
-    # Remove any duplicate IP addresses
-    my %ipAddresses = map { $_ => 1 } @ipAddresses;
-    foreach my $ip (sort keys %ipAddresses)
-    {
-        $OUT .= "Listen $ip:631\n";
-    }
+	my $port = $cups{TCPPort} || '631';
+        $OUT .= "Listen 0.0.0.0:$port\n";
 }
-
