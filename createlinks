@@ -1,14 +1,26 @@
 #!/usr/bin/perl -w
+#
+# Copyright (C) 2012 Nethesis S.r.l.
+# http://www.nethesis.it - support@nethesis.it
+# 
+# This script is part of NethServer.
+# 
+# NethServer is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License,
+# or any later version.
+# 
+# NethServer is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with NethServer.  If not, see <http://www.gnu.org/licenses/>.
+#
 
 use esmith::Build::CreateLinks  qw(:all);
 use File::Path;
-
-#--------------------------------------------------
-# service links for cupsd
-#--------------------------------------------------
-$service = "cups";
-
-service_link_enhanced($service, "S90", "7");
 
 #--------------------------------------------------
 # actions for network-create event
@@ -17,7 +29,7 @@ service_link_enhanced($service, "S90", "7");
 $event = "network-create";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
+event_services($event, 'cups' => 'restart');
 
 #--------------------------------------------------
 # actions for network-delete event
@@ -26,29 +38,29 @@ safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
 $event = "network-delete";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
+event_services($event, 'cups' => 'restart');
 
 #--------------------------------------------------
-# actions for bootstrap-console-save event
+# actions for network-delete event
 #--------------------------------------------------
 
-$event = "bootstrap-console-save";
-
-templates2events("/etc/cups/mime.convs", $event);
-templates2events("/etc/cups/mime.types", $event);
-templates2events("/etc/cups/cupsd.conf", $event);
-
-#--------------------------------------------------
-# actions for console-save event
-#--------------------------------------------------
-
-$event = "console-save";
+$event = "network-modify";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
+event_services($event, 'cups' => 'restart');
+
 
 #--------------------------------------------------
-# actions for cups-update event
+# actions for interface-update event
+#--------------------------------------------------
+
+$event = "interface-update";
+
+templates2events("/etc/cups/cupsd.conf", $event);
+event_services($event, 'cups' => 'restart');
+
+#--------------------------------------------------
+# actions for nethserver-cups-update event
 #--------------------------------------------------
 
 $event = "nethserver-cups-update";
@@ -57,6 +69,37 @@ templates2events("/etc/cups/mime.convs", $event);
 templates2events("/etc/cups/mime.types", $event);
 templates2events("/etc/cups/cupsd.conf", $event);
 templates2events("/etc/samba/smb.conf", $event);
-safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/cups");
-safe_symlink("reload", "root/etc/e-smith/events/$event/services2adjust/smbd");
+event_services($event, 'cups' => 'restart');
+event_services($event, 'smb' => 'reload');
+event_actions($event,
+              'nethserver-cups-conf' => '02',
+              'firewall-adjust' => '30',
+              'runlevel-adjust' => '40');
+
+
+#--------------------------------------------------
+# actions for nethserver-cups-save event
+#--------------------------------------------------
+
+$event = "nethserver-cups-save";
+
+event_templates($event, '/etc/cups/cupsd.conf');
+event_services($event, 'cups' => 'restart');
+event_services($event, 'smb' => 'reload');
+
+
+#--------------------------------------------------
+# actions for nethserver-cups-uninstall event
+#--------------------------------------------------
+
+$event = "nethserver-cups-uninstall";
+
+event_actions($event,
+              'nethserver-cups-uninstall' => '02',
+              'firewall-adjust' => '40',
+              'runlevel-adjust' => '50');
+templates2events("/etc/samba/smb.conf", $event);
+event_services($event, 'smb' => 'reload');
+
+
 
