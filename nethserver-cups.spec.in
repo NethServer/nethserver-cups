@@ -42,6 +42,10 @@ echo "%doc COPYING" >> %{name}-%{version}-%{release}-filelist
 source /etc/nethserver/rpm_hook_functions
 event_queue add %{name}-update
 
+%preun
+source /etc/nethserver/rpm_hook_functions
+signal-event  %{name}-uninstall $1
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
