@@ -1,8 +1,0 @@
-#
-# BrowsePort: the port used for UDP broadcasts.  By default this is
-# the IPP port; if you change this you need to do it on all servers.
-# Only one BrowsePort is recognized.
-#
-
-#BrowsePort 631
-

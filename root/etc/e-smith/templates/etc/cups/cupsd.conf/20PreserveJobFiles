@@ -1,7 +1,0 @@
-#
-# PreserveJobFiles: whether or not to preserve the job files after a
-# job is completed, cancelled, or stopped.  Default is No.
-#
-
-#PreserveJobFiles No
-

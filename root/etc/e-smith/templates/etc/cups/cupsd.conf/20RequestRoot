@@ -1,7 +1,0 @@
-#
-# RequestRoot: the directory where request files are stored.
-# By default "/var/spool/cups".
-#
-
-#RequestRoot /var/spool/cups
-

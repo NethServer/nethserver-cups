@@ -1,9 +1,0 @@
-#
-# RIPCache: the amount of memory that each RIP should use to cache
-# bitmaps.  The value can be any real number followed by "k" for
-# kilobytes, "m" for megabytes, "g" for gigabytes, or "t" for tiles
-# (1 tile = 256x256 pixels.)  Defaults to "8m" (8 megabytes).
-#
-
-#RIPCache 8m
-

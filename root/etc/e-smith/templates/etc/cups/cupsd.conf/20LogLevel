@@ -1,14 +1,4 @@
-#
-# LogLevel: controls the number of messages logged to the ErrorLog
-# file and can be one of the following:
-#
-#     debug2	Log everything.
-#     debug	Log almost everything.
-#     info      Log all requests and state changes.
-#     warn      Log errors and warnings.
-#     error     Log only errors.
-#     none      Log nothing.
-#
+# Log general information in error_log - change "warn" to "debug"
+# for troubleshooting...
 
-LogLevel info
-
+LogLevel warn

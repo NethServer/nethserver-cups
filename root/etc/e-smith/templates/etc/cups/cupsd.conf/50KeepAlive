@@ -1,7 +1,0 @@
-#
-# KeepAlive: whether or not to support the Keep-Alive connection
-# option.  Default is on.
-#
-
-#KeepAlive On
-

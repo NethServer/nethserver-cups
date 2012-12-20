@@ -1,7 +1,0 @@
-#
-# RootCertDuration: How frequently the root certificate is regenerated.
-# Defaults to 300 seconds.
-#
-
-#RootCertDuration 300
-

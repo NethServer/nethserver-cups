@@ -1,7 +1,0 @@
-#
-# ServerRoot: the root directory for the scheduler.
-# By default "/etc/cups".
-#
-
-#ServerRoot /etc/cups
-

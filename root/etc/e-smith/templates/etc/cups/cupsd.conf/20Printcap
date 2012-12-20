@@ -1,7 +1,0 @@
-#
-# Printcap: the name of the printcap file.  Default is /etc/printcap.
-# Leave blank to disable printcap file generation.
-#
-
-#Printcap /etc/printcap
-

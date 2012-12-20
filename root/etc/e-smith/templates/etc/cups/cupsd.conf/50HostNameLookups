@@ -1,7 +1,0 @@
-#
-# HostNameLookups: whether or not to do lookups on IP addresses to get a
-# fully-qualified hostname.  This defaults to Off for performance reasons...
-#
-
-#HostNameLookups On
-

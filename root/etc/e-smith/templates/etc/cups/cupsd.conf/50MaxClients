@@ -1,7 +1,0 @@
-#
-# MaxClients: controls the maximum number of simultaneous clients that
-# will be handled.  Defaults to 100.
-#
-
-#MaxClients 100
-

@@ -1,7 +1,0 @@
-#
-# ServerBin: the root directory for the scheduler executables.
-# By default "/usr/lib/cups".
-#
-
-#ServerBin /usr/lib/cups
-

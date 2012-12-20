@@ -1,7 +1,0 @@
-#
-# BrowseOrder: specifies the order of BrowseAllow/BrowseDeny comparisons.
-#
-
-#BrowseOrder allow,deny
-#BrowseOrder deny,allow
-
