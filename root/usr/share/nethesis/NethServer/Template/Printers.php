@@ -1,6 +1,6 @@
 <?php
 
-echo $view->header()->setAttribute('template', $T('Printers'));
+echo $view->header()->setAttribute('template', $T('Printers_Title'));
 
 echo $view->panel()
     ->insert($view->checkbox('status', 'enabled')->setAttribute('uncheckedValue', 'disabled'));
