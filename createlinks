@@ -66,9 +66,7 @@ event_services($event, 'cups' => 'restart');
 $event = "nethserver-cups-update";
 
 templates2events("/etc/cups/cupsd.conf", $event);
-templates2events("/etc/samba/smb.conf", $event);
 event_services($event, 'cups' => 'restart');
-event_services($event, 'smb' => 'reload');
 event_actions($event,
               'initialize-default-databases' => '00',
               'nethserver-cups-conf' => '02',
@@ -84,7 +82,6 @@ $event = "nethserver-cups-save";
 
 event_templates($event, '/etc/cups/cupsd.conf');
 event_services($event, 'cups' => 'restart');
-event_services($event, 'smb' => 'reload');
 
 
 #--------------------------------------------------
@@ -97,8 +94,6 @@ event_actions($event,
               'nethserver-cups-uninstall' => '02',
               'firewall-adjust' => '40',
               'runlevel-adjust' => '50');
-templates2events("/etc/samba/smb.conf", $event);
-event_services($event, 'smb' => 'reload');
 
 
 
