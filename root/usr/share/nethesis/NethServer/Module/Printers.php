@@ -49,16 +49,11 @@ class Printers extends \Nethgui\Controller\AbstractController
     public function prepareView(\Nethgui\View\ViewInterface $view)
     {
         parent::prepareView($view);
-        $view['port'] = $this->getPlatform()->getDatabase('configuration')->getProp('cups','TCPPort');
+        $port = $this->getPlatform()->getDatabase('configuration')->getProp('cups','TCPPort');
         $hostname = $this->getPlatform()->getDatabase('configuration')->getType('SystemName');
         $domain = $this->getPlatform()->getDatabase('configuration')->getType('DomainName');
-        $view['fqdn'] = "$hostname.$domain";
-        $status = $this->getPlatform()->getDatabase('configuration')->getProp('cups','status');
-        if ($status == 'enabled') {
-	    $view['url'] = $view->translate('url_access_label', array($view['fqdn'], $view['port']));
-        } else { 
-            $view['url'] = "";
-        }
+        // redirect to CUPS web interface
+        $view->getCommandList()->httpHeader("Location: https://$hostname.$domain.com:$port");
     }
 
 }
