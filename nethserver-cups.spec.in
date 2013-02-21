@@ -53,5 +53,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 
 %changelog
-* Wed Jan 16 2012 Giacomo Sanchietti <giacomo.sanchietti@gmail.com> 1.0.0-1
+* Wed Jan 16 2013 Giacomo Sanchietti <giacomo.sanchietti@gmail.com> 1.0.0-1
 - First release
