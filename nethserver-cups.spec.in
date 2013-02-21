@@ -11,7 +11,7 @@ Packager: Giacomo Sanchietti <giacomo@nethesis.it>
 BuildArch: noarch
 
 Requires: foomatic, ghostscript, hpijs
-Requires: nethserver-base
+Requires: nethserver-base >= 1.1.0
 
 BuildRequires: nethserver-devtools
 AutoReq: no
