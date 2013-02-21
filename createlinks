@@ -96,4 +96,15 @@ event_actions($event,
               'runlevel-adjust' => '50');
 
 
+#--------------------------------------------------
+# actions for certificate-update event
+#--------------------------------------------------
+event_templates('certificate-update', qw(
+                 /etc/cups/ssl/server.crt
+                 /etc/cups/ssl/server.key
+));
+
+event_services('certificate-update', qw(
+               cupsd restart
+));
 

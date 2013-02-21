@@ -1,0 +1,5 @@
+TEMPLATE_PATH="certificate/crt"
+OUTPUT_FILENAME="/etc/cups/ssl/server.crt"
+PERMS=0600
+UID="root"
+GID="root"
