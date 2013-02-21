@@ -53,7 +53,7 @@ class Printers extends \Nethgui\Controller\AbstractController
         $hostname = $this->getPlatform()->getDatabase('configuration')->getType('SystemName');
         $domain = $this->getPlatform()->getDatabase('configuration')->getType('DomainName');
         // redirect to CUPS web interface
-        $view->getCommandList()->httpHeader("Location: https://$hostname.$domain.com:$port");
+        $view->getCommandList()->httpHeader("Location: https://$hostname.$domain:$port");
     }
 
 }
