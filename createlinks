@@ -110,3 +110,10 @@ event_services('certificate-update', qw(
                cupsd restart
 ));
 
+#--------------------------------------------------
+# actions for migration-import event
+#--------------------------------------------------
+
+$event = "migration-import";
+event_actions($event, 'nethserver-cups-migrate' => 50);
+
