@@ -22,6 +22,7 @@
 
 event=$1
 sourceDir=$2
+dbFile="/home/e-smith/db/configuration"
 printersFile="/etc/cups/printers.conf"
 classesFile="/etc/cups/classes.conf"
 
@@ -34,4 +35,7 @@ mkdir -p /etc/cups/
 cp  -p "$sourceDir/$printersFile" $printersFile
 cp  -p "$sourceDir/$classesFile" $classesFile
 
-/sbin/service cups reload
+status=`/sbin/e-smith/db $sourceDir/$dbFile getprop cups status`
+/sbin/e-smith/config setprop cups status $status
+
+/sbin/e-smith/signal-event nethserver-cups-update
