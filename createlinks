@@ -40,15 +40,6 @@ $event = "network-delete";
 templates2events("/etc/cups/cupsd.conf", $event);
 event_services($event, 'cups' => 'restart');
 
-#--------------------------------------------------
-# actions for network-delete event
-#--------------------------------------------------
-
-$event = "network-modify";
-
-templates2events("/etc/cups/cupsd.conf", $event);
-event_services($event, 'cups' => 'restart');
-
 
 #--------------------------------------------------
 # actions for interface-update event
