@@ -60,11 +60,7 @@ templates2events("/etc/cups/cupsd.conf", $event);
 templates2events("/etc/cups/ssl/server.crt", $event);
 templates2events("/etc/cups/ssl/server.key", $event);
 event_services($event, 'cups' => 'restart');
-event_actions($event,
-              'initialize-default-databases' => '00',
-              'nethserver-cups-conf' => '02',
-              'firewall-adjust' => '30',
-              'runlevel-adjust' => '40');
+event_actions($event, 'initialize-default-databases' => '00');
 
 
 #--------------------------------------------------
@@ -75,18 +71,6 @@ $event = "nethserver-cups-save";
 
 event_templates($event, '/etc/cups/cupsd.conf');
 event_services($event, 'cups' => 'restart');
-
-
-#--------------------------------------------------
-# actions for nethserver-cups-uninstall event
-#--------------------------------------------------
-
-$event = "nethserver-cups-uninstall";
-
-event_actions($event,
-              'nethserver-cups-uninstall' => '02',
-              'firewall-adjust' => '40',
-              'runlevel-adjust' => '50');
 
 
 #--------------------------------------------------
