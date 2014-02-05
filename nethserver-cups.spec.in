@@ -49,6 +49,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 
 %changelog
+* Wed Feb 05 2014 Davide Principi <davide.principi@nethesis.it> - 1.1.0-1.ns6
+- Printer list status - Feature #1625 [NethServer]
+- Lib: synchronize service status prop and chkconfig - Feature #2067 [NethServer]
+
 * Tue May 07 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.2-1.ns6
 • Rebuild for automatic package handling. #1870
 
