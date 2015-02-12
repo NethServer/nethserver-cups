@@ -1,7 +1,7 @@
 Summary: NethServer CUPS module
 Name: nethserver-cups
-Version:        @@VERSION@@
-Release:        @@RELEASE@@
+Version:        1.1.1
+Release:        1
 License: GPL
 Group: Networking/Daemons
 Source0: %{name}-%{version}.tar.gz
