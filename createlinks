@@ -23,23 +23,15 @@ use esmith::Build::CreateLinks  qw(:all);
 use File::Path;
 
 #--------------------------------------------------
-# actions for network-create event
+# trusted-networks-modify event
 #--------------------------------------------------
 
-$event = "network-create";
-
-templates2events("/etc/cups/cupsd.conf", $event);
-event_services($event, 'cups' => 'restart');
-
-#--------------------------------------------------
-# actions for network-delete event
-#--------------------------------------------------
-
-$event = "network-delete";
-
-templates2events("/etc/cups/cupsd.conf", $event);
-event_services($event, 'cups' => 'restart');
-
+event_templates('trusted-networks-modify', qw(
+    /etc/cups/cupsd.conf
+));
+event_services('trusted-networks-modify', qw(
+    cups restart
+));
 
 #--------------------------------------------------
 # actions for interface-update event
