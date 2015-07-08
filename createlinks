@@ -34,15 +34,6 @@ event_services('trusted-networks-modify', qw(
 ));
 
 #--------------------------------------------------
-# actions for interface-update event
-#--------------------------------------------------
-
-$event = "interface-update";
-
-templates2events("/etc/cups/cupsd.conf", $event);
-event_services($event, 'cups' => 'restart');
-
-#--------------------------------------------------
 # actions for nethserver-cups-update event
 #--------------------------------------------------
 
