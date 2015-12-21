@@ -1,7 +1,7 @@
 Summary: NethServer CUPS module
 Name: nethserver-cups
-Version:        1.1.1
-Release:        1%{?dist}
+Version: 1.1.3
+Release: 1%{?dist}
 License: GPL
 Source0: %{name}-%{version}.tar.gz
 URL: %{url_prefix}/%{name}
@@ -34,6 +34,12 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Tue Sep 29 2015 Davide Principi <davide.principi@nethesis.it> - 1.1.3-1
+- Make Italian language pack optional - Enhancement #3265 [NethServer]
+
+* Wed Jul 15 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.1.2-1
+- Event trusted-networks-modify - Enhancement #3195 [NethServer]
+
 * Wed Aug 20 2014 Davide Principi <davide.principi@nethesis.it> - 1.1.1-1.ns6
 - Missing Italian translation - Bug #2706 [NethServer]
 
