@@ -7,7 +7,7 @@ Source0: %{name}-%{version}.tar.gz
 URL: %{url_prefix}/%{name}
 BuildArch: noarch
 
-Requires: foomatic, ghostscript, hpijs
+Requires: foomatic, ghostscript, hpijs, hplip
 Requires: nethserver-base
 
 BuildRequires: nethserver-devtools
