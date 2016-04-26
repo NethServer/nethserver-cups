@@ -42,7 +42,7 @@ $event = "nethserver-cups-update";
 templates2events("/etc/cups/cupsd.conf", $event);
 templates2events("/etc/cups/ssl/server.crt", $event);
 templates2events("/etc/cups/ssl/server.key", $event);
-event_services($event, 'cups' => 'restart');
+event_services($event, qw(cups restart    smb restart));
 event_actions($event, 'initialize-default-databases' => '00');
 
 
