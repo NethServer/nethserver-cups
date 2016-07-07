@@ -1,13 +1,13 @@
 [main]
 host = https://www.transifex.com
 
-[nethserver.Dashboard_Printers]
+[nethserver-v6.Dashboard_Printers]
 source_file = root/usr/share/nethesis/NethServer/Language/en/NethServer_Module_Dashboard_Printers.php
 source_lang = en
 type = PHP_ALT_ARRAY
 
 
-[nethserver.Printers]
+[nethserver-v6.Printers]
 source_file = root/usr/share/nethesis/NethServer/Language/en/NethServer_Module_Printers.php
 source_lang = en
 type = PHP_ALT_ARRAY
