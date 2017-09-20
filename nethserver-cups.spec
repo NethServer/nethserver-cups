@@ -1,6 +1,6 @@
 Summary: NethServer CUPS module
 Name: nethserver-cups
-Version: 1.2.0
+Version: 1.2.1
 Release: 1%{?dist}
 License: GPL
 Source0: %{name}-%{version}.tar.gz
@@ -34,6 +34,10 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed Sep 20 2017 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.2.1-1
+- Remove undocumented SystemGroup option - nethserver-cups#4
+- Fix service access prop
+
 * Thu Jul 07 2016 Stefano Fancello <stefano.fancello@nethesis.it> - 1.2.0-1
 - First NS7 release
 
