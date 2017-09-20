@@ -1,3 +1,0 @@
-
-SystemGroup { $cupsd{SystemGroup} || "admin" }
-
