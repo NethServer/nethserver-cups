@@ -1,6 +1,3 @@
-#
-# 50printers must be in global section and before service section
-#
 {
    my $useCups = $smb{'UseCups'} || 'disabled';
    if ($useCups eq 'enabled') {
