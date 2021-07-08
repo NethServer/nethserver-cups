@@ -1,6 +1,7 @@
 {
    my $useCups = $smb{'UseCups'} || 'disabled';
    if ($useCups eq 'enabled') {
+       $OUT .= "[global]\n";
        $OUT .= "printing = cups\n";
        $OUT .= "printcap name = cups\n\n";
        $OUT .= "[printers]\n";
@@ -14,6 +15,7 @@
        $OUT .= $smb{UseClientDriver} || "yes";
    } else {
        $OUT .= "# Cups is disabled\n"; 
+       $OUT .= "[global]\n";
        $OUT .= "printcap name = /etc/printcap\n";
        $OUT .= "load printers = no\n";
    }
