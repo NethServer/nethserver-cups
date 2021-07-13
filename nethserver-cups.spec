@@ -1,6 +1,6 @@
 Summary: NethServer CUPS module
 Name: nethserver-cups
-Version: 1.2.2
+Version: 1.2.3
 Release: 1%{?dist}
 License: GPL
 Source0: %{name}-%{version}.tar.gz
@@ -34,6 +34,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Tue Jul 13 2021 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.2.3-1
+- Cups: printcap name found in service section - Bug NethServer/dev#6543
+
 * Fri Aug 09 2019 Stephane de Labrusse <stephdl@de-labrusse.fr> - 1.2.2-1
 - Cups: Obsolete directives - Bug NethServer/dev#5800
 
